@@ -23,10 +23,12 @@ site directly to the game database.
 
 `data/leaderboards.json` is the only ranking data source used by the static
 page. It accepts a versioned JSON document with `title`, `period`, `unit`,
-`status`, and entries containing only a public character name and numeric
-score. Do not include account IDs, emails, IPs, database credentials, or
-unapproved character names. An empty board remains unpublished; `unavailable`
-means the server does not currently store that measure for ranking.
+`status`, and entries containing only a character name and numeric score. The owner selected
+all-character public rankings; the page discloses that names and selected
+gameplay stats may be public. Never include account IDs, emails, IPs, database
+credentials, or other account data. An empty board remains unpublished;
+`unavailable` means the server does not currently store that measure for
+ranking.
 
 Updates are currently manual Git changes. A future exporter must run outside
 the public website with read-only access, emit an allowlisted aggregate, and

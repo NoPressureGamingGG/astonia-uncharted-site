@@ -86,8 +86,8 @@
 
       container.replaceChildren(...data.leaderboards.map(renderBoard));
       updatedLabel.textContent = data.updatedAt
-        ? `Last updated ${data.updatedAt}. No live game database is connected; only intentionally published ranking data appears here.`
-        : "No live game database is connected. Only intentionally published ranking data appears here.";
+        ? `Last updated ${data.updatedAt}. Rankings may show all character names and selected game stats; account and contact data are excluded.`
+        : "No live game database is connected. When rankings launch, all character names and selected game stats may be public; account and contact data will not be included.";
     } catch (error) {
       console.error("Could not load public leaderboards:", error);
       showMessage(fallbackMessage);
