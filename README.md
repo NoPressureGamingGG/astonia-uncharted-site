@@ -19,16 +19,25 @@ Before adding live rankings, publish only approved stats through a separate,
 server-side export. Never expose database credentials or connect the public
 site directly to the game database.
 
+## Planned account registration
+
+The owner selected invitation-based signup that creates one account and one
+normal first character. Registration is not available yet. Do not add a
+credential form to this static site: it needs a separately hosted HTTPS
+backend, private database access with least privilege, parameterized writes,
+invite-code expiry/one-time use, abuse controls, and an operational recovery
+plan. The public website must never connect directly to the game database.
+
 ## Public leaderboard data
 
 `data/leaderboards.json` is the only ranking data source used by the static
 page. It accepts a versioned JSON document with `title`, `period`, `unit`,
-`status`, and entries containing only a character name and numeric score. The owner selected
-all-character public rankings; the page discloses that names and selected
-gameplay stats may be public. Never include account IDs, emails, IPs, database
-credentials, or other account data. An empty board remains unpublished;
-`unavailable` means the server does not currently store that measure for
-ranking.
+`status`, and entries containing only a character name and numeric score. The
+owner selected all-character public rankings; the page discloses that names
+and selected gameplay stats may be public. Never include account IDs, emails,
+IPs, database credentials, or other account data. An empty board remains
+unpublished; `unavailable` means the server does not currently store that
+measure for ranking.
 
 Updates are currently manual Git changes. A future exporter must run outside
 the public website with read-only access, emit an allowlisted aggregate, and
