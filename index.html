@@ -92,16 +92,10 @@
             </div>
             <span class="status-pill"><span class="status-dot"></span> Not live yet</span>
           </div>
-          <div class="leaderboard">
-            <div class="leaderboard-head">
-              <span>RANK</span><span>ADVENTURER</span><span>RECORD</span>
-            </div>
-            <div class="leaderboard-empty">
-              <span class="empty-mark" aria-hidden="true">—</span>
-              <p>Rankings will appear here when a safe, verified stats feed is ready.</p>
-            </div>
+          <div class="leaderboards" id="leaderboards" aria-live="polite">
+            <p class="leaderboard-empty">Loading published rankings…</p>
           </div>
-          <p class="safety-note">No live game database is connected. Public rankings will use only stats approved for display.</p>
+          <p class="safety-note" id="leaderboard-updated">No live game database is connected. Only intentionally published ranking data appears here.</p>
         </div>
       </section>
     </main>
@@ -113,5 +107,6 @@
         <a class="back-top" href="#home">Back to top ↑</a>
       </div>
     </footer>
+    <script src="leaderboards.js" defer></script>
   </body>
 </html>

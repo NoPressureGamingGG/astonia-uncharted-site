@@ -8,16 +8,31 @@ server data.
 
 Open `index.html` in a browser.
 
-## Publish with GitHub Pages
+The site is published at
+<https://nopressuregaminggg.github.io/astonia-uncharted-site/>.
 
-1. Create a public GitHub repository named `astonia-uncharted-site`.
-2. Push this folder's contents to its `main` branch.
-3. In the repository, open **Settings > Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**, select
-   `main` and `/(root)`, then save.
-5. GitHub will show the published URL on that Pages settings screen.
+The site and its Git repository are kept separate from the Server 3 checkout.
+GitHub Pages is configured to publish the `main` branch root.
 
 The character-creation guide and rankings are explicitly marked as unfinished.
 Before adding live rankings, publish only approved stats through a separate,
 server-side export. Never expose database credentials or connect the public
 site directly to the game database.
+
+## Public leaderboard data
+
+`data/leaderboards.json` is the only ranking data source used by the static
+page. It accepts a versioned JSON document with `title`, `period`, `unit`,
+`status`, and entries containing only a public character name and numeric
+score. Do not include account IDs, emails, IPs, database credentials, or
+unapproved character names. An empty board remains unpublished; `unavailable`
+means the server does not currently store that measure for ranking.
+
+Updates are currently manual Git changes. A future exporter must run outside
+the public website with read-only access, emit an allowlisted aggregate, and
+be reviewed before publication. The existing server report tool also queries
+private account/IP and gold data; do not publish its raw output.
+
+Peak DPS is currently unavailable as a persistent public leaderboard metric.
+The tracker stores cumulative stats, not durable peak-DPS rankings. Do not
+infer peak DPS from lifetime damage.

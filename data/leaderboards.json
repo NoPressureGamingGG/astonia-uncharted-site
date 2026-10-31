@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": null,
+  "leaderboards": [
+    {
+      "title": "Most kills",
+      "period": "All time",
+      "unit": "kills",
+      "status": "not-published",
+      "entries": []
+    },
+    {
+      "title": "Most damage",
+      "period": "All time",
+      "unit": "damage",
+      "status": "not-published",
+      "entries": []
+    },
+    {
+      "title": "Peak DPS",
+      "period": "Session",
+      "unit": "DPS",
+      "status": "unavailable",
+      "entries": []
+    }
+  ]
+}

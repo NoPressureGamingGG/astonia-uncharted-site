@@ -69,12 +69,17 @@ h2 { margin-bottom: 0; font-size: clamp(38px, 5vw, 64px); font-weight: 500; lett
 .rankings { padding: 103px 0 112px; background: var(--night-soft); }
 .rankings-heading { margin-bottom: 48px; }
 .status-pill { justify-self: end; padding: 9px 13px; border: 1px solid var(--line); color: #cbd4ca; font: 10px Consolas, monospace; letter-spacing: .07em; text-transform: uppercase; }
-.leaderboard { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.leaderboard-head { display: grid; grid-template-columns: .5fr 2fr 1fr; padding: 17px 20px; color: var(--muted); font: 10px Consolas, monospace; letter-spacing: .12em; }
-.leaderboard-head span:last-child { text-align: right; }
-.leaderboard-empty { min-height: 107px; padding: 20px; display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--line); }
-.empty-mark { color: var(--orange); font: 25px "Playfair Display", serif; }
-.leaderboard-empty p { max-width: 470px; margin: 0; color: #bbc5bd; font-size: 14px; line-height: 1.6; }
+.leaderboards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.leaderboard { min-height: 185px; border: 1px solid var(--line); }
+.leaderboard-heading { min-height: 64px; padding: 16px; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--line); }
+.leaderboard-heading h3 { margin: 0; font-size: 14px; font-weight: 600; }
+.leaderboard-heading span { color: var(--muted); font: 10px Consolas, monospace; white-space: nowrap; }
+.leaderboard-empty { min-height: 100px; margin: 0; padding: 19px 16px; display: flex; align-items: center; color: #bbc5bd; font-size: 13px; line-height: 1.6; }
+.leaderboard-list { margin: 0; padding: 0 16px; list-style: none; }
+.leaderboard-list li { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.leaderboard-list li:last-child { border-bottom: 0; }
+.leaderboard-name { overflow: hidden; color: #dce2da; text-overflow: ellipsis; white-space: nowrap; }
+.leaderboard-score { color: var(--lime); font: 11px Consolas, monospace; white-space: nowrap; }
 footer { padding: 29px 7vw; border-top: 1px solid var(--line); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .footer-inner p { margin: 0; color: var(--muted); font-size: 11px; text-align: center; }
@@ -97,6 +102,7 @@ footer { padding: 29px 7vw; border-top: 1px solid var(--line); }
   .character-card { padding: 23px 18px; grid-template-columns: 42px 1fr; gap: 15px; }
   .coming-soon { grid-column: 2; }
   .rankings { padding: 80px 0; }
+  .leaderboards { grid-template-columns: 1fr; }
   .status-pill { justify-self: start; }
   .footer-inner { flex-wrap: wrap; }
   .footer-inner p { order: 3; width: 100%; text-align: left; }
